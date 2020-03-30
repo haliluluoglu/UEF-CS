@@ -1,0 +1,48 @@
+<h4>Machine Vision</h4>
+
+</h5>Exercise 2: Color images</h5>
+
+<p><ol>
+<li>
+<p>
+Read <a href="figs/5.1.09.tiff">a grayscale image</a>
+and <a href="figs/4.2.03.tiff">a color image</a>
+to Matlab into different variables
+(commands <font face="courier">f = imread('5.1.09.tiff');</font> and
+<font face="courier">imshow(f)</font> are useful).
+Check the variable sizes (in Workspace window, or use the 
+<font face="courier">whos</font> command) - how do the
+dimensions differ between a grayscale and a color image?
+What do the dimensions represent? 
+(You can try the Data Cursor Tool from Matlab figure toolbar: click on the
+image - what do the numbers mean?)
+Show the three different channels of the color image
+(for example, <font face="courier">imshow(f(:,:,1))</font>).
+What do you think they represent?
+</p>
+
+<li><p>
+Convert the color image RGB values into
+HSV (hue, saturation, value) and YIQ (luminance, hue, saturation)
+color spaces (<font face="courier">rgb2hsv</font>, <font face="courier">rgb2ntsc</font>).
+Visualize the channels in each color space (with 
+<font face="courier">imshow</font>).
+What other color spaces does Matlab support? (search Help for "color space conversion".)
+</p>
+
+<li><p>
+There are many ways for converting color images into grayscale. One of them is
+<font face="courier">rgb2gray</font>. How is the conversion done?
+What color space contains the grayscale image as one component?
+</p>
+
+</ol></p>
+
+<p>
+If you want to use Matlab for digital image processing, commands such as 
+<font face="courier">imrotate</font>,
+<font face="courier">imresize</font>,
+<font face="courier">imadjust</font> and
+<font face="courier">imcontrast</font>
+can be useful.
+</p>
