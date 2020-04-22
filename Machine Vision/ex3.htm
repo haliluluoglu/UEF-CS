@@ -1,0 +1,71 @@
+<h4>Machine Vision</h4>
+
+</h5>Exercise 3: Connected Components and Image Thresholding</h5>
+
+<p>
+For more information about binary image processing, search Matlab help
+for "Labeling and Measuring Objecs in a Binary Image".
+</p>
+
+<p><ol>
+<li>
+<p>
+Get
+<a href="figs/blobs.png">a binary image of four round objects</a>
+(or blobs). Compute the centroids for each round object.
+Mark the centroid points in the image.
+</p>
+<p><img src="figs/blobs_centroids.png" /></p>
+
+<ol type="a">
+<li><p> <font face="courier">bwlabel</font> implements an operation known as
+<i>connected component labeling</i>. Use <font face="courier">bwlabel</font>
+to find 8-connected objects in the image. Command <font face="courier">im2bw</font>
+converts an image to a binary image. To visualize results of labeling operation
+in variable <font face="courier">L</font> use command
+<font face="courier">imshow(label2rgb(L))</font>.</p>
+
+<li><p> Use <font face="courier">regionprops</font> to get the centroids for each
+object. <font face="courier">regionprops</font> returns a struct array containing
+a field <i>Centroid</i> containing the object centroids. If <font face="courier">s</font>
+is a variable containing the centroid struct array then command
+<font face="courier">s(4).Centroid(1)</font> would return the y-coordinate
+of the 3rd round object (the first object is the rectangle).</p>
+
+<li><p> Use <font face="courier">text</font> (and <font face="courier">num2str</font>)
+functions for displaying the centroid marks on top of the objects.</p>
+
+</ol> 
+<font face="courier"></font>
+
+<li><p>
+Get <a href="figs/segmented_rice.png">a binary image of rice</a>.
+Compute the area of each piece of rice that does not touch the image border. 
+Draw a histogram of areas using 20 bins. Use <font face="courier">imclearborder</font>, 
+<font face="courier">im2bw</font> and <font face="courier">hist</font> functions. 
+If variable <font face="courier">idata</font> contains the structure array returned 
+by <font face="courier">regionprops</font> then you can use command 
+<font face="courier">[idata.Area]</font> to convert the area information into matrix 
+form for further processing.
+</p>
+
+<li><p>
+<a href="http://en.wikipedia.org/wiki/Thresholding_(image_processing)">
+Image thresholding</a> is used often in image segmentation. The threshold can be
+chosen by visual inspection of the histogram, or by trial and error.
+</p>
+
+<p>
+Take a <a href="figs/noisy_fingerprint.tif">noisy fingerprint</a> image and view
+its histogram (<font face="courier">imhist</font>).
+Then perform segmentation by thresholding; try to extract the fingerprint from
+the background. Choose a threshold by visual inspection of the histogram.
+Threshold the image by <font face="courier">threshold_image = (image > threshold)</font>,
+where <font face="courier">image</font> is the original image and
+<font face="courier">threshold</font> is the threshold value. 
+(The thresholding can also be performed with <font face="courier">im2bw</font>.)
+View the original and segmented images (with <font face="courier">subplot</font>
+and <font face="courier">imshow</font>).
+</p>
+
+</ol></p>
