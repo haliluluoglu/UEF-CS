@@ -1,0 +1,50 @@
+<h4>Machine Vision</h4>
+
+</h5>Exercise 5: Spatial filtering</h5>
+
+<p>
+In these exercises, two source images are used: 
+<a href="figs/ckt-board-slt-pep.tif">an industrial circuit board</a> corrupted by
+salt-and-pepper noise,
+and a slightly blurred image of the <a href="figs/moon.tif">North Pole of the Moon</a>.
+</p>
+
+<p><ol>
+
+<li><p>
+
+<ol type="a">
+<li><p>
+Median filter the circuit board image (<font face="courier">medfilt2</font>).
+Experiment with different filter sizes. What happens when the median
+filter size increases? Check also how different image padding methods
+(zero-padding and symmetric padding) affect on filtering.
+</p>
+
+<li><p>
+Matlab's help for <font face="courier">colfilt</font> shows an example
+of mean filtering 
+(<a href=http://www.mathworks.com/help/toolbox/images/ref/colfilt.html>web help</a>). 
+Mean filter the circuit board image; try also
+max and min filters.
+For what purposes might these filters be useful?
+</p>
+</ol>
+
+<li><p>
+Matlab function <font face="courier">edge</font> can be used for edge
+detection. Find the edges from the circuit board image;
+use both Sobel and Laplacian of Gaussian methods. Repeat the exercise for median and
+mean filtered images. In your opinion, which combination produces the best result?
+</p>
+
+<li><p>
+The general image filtering command in Matlab is <font face="courier">imfilter</font>,
+and predefined filters can be created with <font face="courier">fspecial</font>.
+Sharpen the Moon image
+by using a suitable filter. Does sharpening enhance the circuit board image?
+</p>
+
+
+</ol>
+
