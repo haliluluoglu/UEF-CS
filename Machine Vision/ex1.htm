@@ -1,0 +1,86 @@
+<h4>Machine Vision</h4>
+
+</h5>Exercise 1: Intensity Transformations</h5>
+
+This exercise introduces you to Matlab.
+
+<p><ol>
+<li>
+<p>A <a
+href="figs/mammogram.tif">digital mammogram image</a>
+shows a small lesion. 
+Read the image in Matlab:<br>
+<font face="courier">f = imread('mammogram.tif');</font><br>
+(if the Matlab statement ends with a semicolon, no output will be printed out).
+Show the image in Matlab with<br>
+<font face="courier">imshow(f)</font><br>
+Use Matlab command 
+<font face="courier">imadjust</font>
+to obtain a negative image, which
+is particularly useful for enhancing white or gray detail embedded in a large,
+predominantly dark region. Use 
+<font face="courier">help imadjust</font>
+command to display a description of and syntax for the function.</p>
+
+<li><p>An <a
+href="figs/pollen.tif">electron microscope image
+of pollen</a>, magnified approximately 700 times, is dark and has a low dynamic
+range. In order to improve average intensity and contrast, equalize the
+histogram of the image. Write a <i>script
+file</i> that displays both the original and enhanced image and their
+histograms. Use 
+<font face="courier">help script</font>
+command to display help about writing a function. Use
+<font face="courier">imhist</font> and
+<font face="courier">histeq</font>
+commands in your script. Command 
+<font face="courier">figure</font>
+creates a new figure window.</p>
+
+<p>Create a
+new Matlab file by typing <font face="courier">edit mynewfile.m</font>
+on command line. 
+Matlab's comment mark is <font face="courier">%</font>; Matlab
+will ignore the rest of a line followed by a percentage sign.
+You can run
+your script by typing its name on a command line.
+The name has to be typed only once since the up arrow key
+gives you a command history.</p>
+
+<li><p>Write a function
+displaying both the original image and an enhanced image of a pollen image.
+An input to the function should be an image matrix and coordinates of an area
+to be displayed. Use 
+<font face="courier">help function</font>
+command to display help about writing a function. 
+A function is similar to a script,
+but it takes arguments.</p>
+
+<p>E.g., <font face="courier">myfunction(f,1,200,300,500)</font>
+would perform the operations from previous exercise for upper-right
+corner of the image. </p>
+
+<p>Matlab
+supports a number of powerful indexing schemes that simplify array manipulation
+and improve the efficiency of programs.Typing <br>
+<font face="courier">v = [1 3 5 7 9] </font><br>
+gives a 1-by-5 matrix (or, a row vector). To access a
+single element of a vector type <br>
+<font face="courier">v(2)</font><br>
+Use Matlab’s colon notation to access blocks of elements, e.g., to access the first
+three elements of <font face="courier">v</font> type <br>
+<font face="courier">v(1:3)</font><br>
+To access
+the last three elements of <font face="courier">v</font> type <br>
+<font face="courier">v(end-2:end)</font><br>
+Matlab represents
+matrices as a sequence of rows, e.g. <br>
+<font face="courier">a = repmat(v,5,1)</font><br>
+creates a
+matrix consisting of five copies of vector <font face="courier">v</font>.
+To access
+values at upper right corner type
+<font face="courier">a(1:2,4:5)</font><br>
+</p>
+
+</ol></p>
