@@ -1,0 +1,67 @@
+<h4>Machine Vision</h4>
+
+</h5>Exercise 4: Morphological Image Processing</h5>
+
+<p>Matlab's help has a chapter about morphology - search for "Morphological Operations".
+(The same text can be found on MathWorks
+<a href="http://www.mathworks.com/help/toolbox/images/f18-9530.html">
+webpage</a>.)
+</p>
+
+<p><ol>
+<li>
+<p>
+Get
+<a href="figs/broken-text.tif">an image with broken characters</a>. 
+Use <font face="courier">imdilate</font> to dilate the image.
+The maximum length of the breaks is known to be two pixels.
+</p>
+
+<p><table><tr><td><img src="figs/image012.gif"/></td></tr>
+<tr><td>Dilated broken characters image</td></tr></table>
+</p>
+
+<li>
+<ol type="a">
+<li><p>
+The thin lines connecting the center region to border pads have to be removed
+from <a href="figs/wirebond-mask.tif">a binary image of a wirebond mask</a>.
+The other structures have to be preserved.
+This can be done by choosing a structuring element small enough to fit within
+the center square and thicker border leads, but too large to fit
+entirely within the wires. Erode the wires using a suitable structuring element.
+After that, restore the center square and thicker border leads to their original
+size using dilation with the same structuring element.
+</p>
+ 
+<p><table><tr><td><img src="figs/image014.gif"/></td></tr>
+<tr><td>Wirebond mask with the thin wires removed</td></tr></table>
+</p>
+
+<li><p>
+Perform the same operation using morphological opening (<font face="courier">imopen</font>)
+with the same structuring element.
+</p>
+</ol>
+
+<li><p>
+Consider <a href="figs/blobs_in_circular_arrangement.tif">an image</a> showing 
+a region of small circles enclosed by a region of larger circles.
+(This exercise is easier to solve if you first complement 
+the original image using <font face="courier">imcomplement</font>.)
+The image has two textural regions: the one composed of large blobs and
+the other composed of smaller blobs. Find the boundary between the two
+regions based on their textural content. Use morphological operations 
+(opening and closing) for
+removing small blobs and combining large blob area into one combined area as<br>
+<img src="figs/image006.gif" /><br>
+The boundary can be found with morphological gradient (= the difference between the
+dilation and the erosion).
+</p>
+
+<p><table><tr><td><img src="figs/segmented_blobs.gif"/></td></tr>
+<tr><td>Blobs and the boundary</td></tr></table>
+</p>
+
+</ol>
+
