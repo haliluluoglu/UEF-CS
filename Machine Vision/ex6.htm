@@ -1,0 +1,78 @@
+<h4>Machine Vision</h4>
+
+</h5>Exercise 6: Watershed and Fourier transforms</h5>
+
+<p><ol>
+
+<li><p>
+Compute the watershed transform of
+a binary image containing 
+<a href="figs/circles.png">two overlapping circles</a>.</p>
+
+<ol type="a">
+<li><p>
+Compute the distance transform (<font face="courier">bwdist</font>)
+of the complement of the image
+using Euclidean, chessboard and cityblock distance metrics.
+Show the distance transforms with <font face="courier">mat2gray</font>
+and <font face="courier">imshow</font>.
+How does the distance metric affect on the distance transform?
+</p>
+
+<li><p>
+Choose one of the distance transforms, complement it and
+force pixels not belonging to the objects have value 
+<font face="courier">-Inf</font> (Matlab command for
+the operation is of form <font face="courier">D1(~bw)=-Inf;</font>).
+</p>
+
+<li><p>
+Now the watershed transform of the distance transform matrix can
+be calculated (<font face="courier">watershed</font>).
+To visualize the watershed transform, use <font face="courier">label2rgb</font>
+and <font face="courier">imshow</font> commands.
+</p>
+
+</ol>
+
+<li><p>
+Calculate the Fourier transform (<font face="courier">fft2</font>) of an 
+<a href="figs/building.tif">image of a building</a>.
+The result is complex (containing complex numbers). Illustrate
+both the natural logarithm of the magnitude (<font face="courier">log</font>,
+<font face="courier">abs</font>) and the phase 
+(<font face="courier">angle</font>) of the result.
+(You might want to adjust the display range to make the visualization
+better; check help for <font face="courier">imshow</font> for how it is done.
+Usually the 2D Fourier transform is shifted so that the zero-frequency
+component is in the centre. This can be done with <font face="courier">
+fftshift</font>.)
+</p>
+
+<!--
+
+<li><p>
+Matlab's <a href="http://www.mathworks.com/help/toolbox/images/f21-17064.html">
+help for 2D Fourier transform</a> shows how image features can be located
+with fft2.
+Make sure you understand the process and repeat it with
+<a href="figs/handwritten.png">handwritten text</a>
+and <a href="figs/template.png">letter n</a>.
+</p>
+
+-->
+
+
+<p><b>Creating image filters in frequency domain.</b></p>
+
+<li><p>
+Create highpass, lowpass, bandpass and bandreject 2D FIR filters, and filter
+some grayscale image with them (you can use, for example,
+<a href="figs/test_pattern.tif">test pattern image</a>).
+Useful Matlab commands:
+<font face="courier">firpm, freqz, ftrans2, freqz2, imfilter</font>.
+</p>
+
+
+</ol>
+
