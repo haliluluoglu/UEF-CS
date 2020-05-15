@@ -1,0 +1,78 @@
+<h4>Machine Vision</h4>
+
+</h5>Exercise 7: Image Segmentation</h5>
+
+<p>
+The aim of image segmentation is to perform partitioning of an image into
+multiple segments. 
+The pixels in the same segment share certain visual characteristics.
+Typically the segments represent objects and boundaries
+in the image. 
+</p>
+
+<ol>
+
+<p><b>Segmentation by region growing.</b></p>
+
+<li><p>
+<a href="figs/defective_weld.tif">An X-ray image of defective weld</a>
+contains several cracks and porosities (the bright, white streaks
+running horizontally through the middle of the image).
+Determine the regions corresponding to weld failures with region growing.
+</p>
+
+<ol type="a">
+
+<li><p>
+Determine the initial seed points. In the case of welding, it is known that
+some pixels in the defective area tend to have the maximum allowable
+digital value (in this case, 255).
+</p>
+
+<li><p>
+Choose a threshold value by analyzing the histogram of the original image.
+Threshold the image (the goal is to leave only bright pixels).
+</p>
+
+<li><p>
+Use <font face="courier">imreconstruct</font> with the seed points as marker
+and thresholded image as mask.
+</p>
+</ol>
+
+<p><img src="figs/weld.png" /></p>
+
+<p><b>Segmentation with texture filters.</b>
+The close-up image of <a href="figs/bag.png">a bag</a> contains two different
+fabrics. Segment the image into two regions based on the texture.</p>
+
+<li><p>
+Use <font face="courier">entropyfilt</font> to create a texture image.
+To show the texture image, use <font face="courier">mat2gray</font>
+to rescale the values. Threshold the rescaled image (you can use, for example,
+<font face="courier">im2bw(rescaled_image, .8);</font>).
+</p>
+
+<p>
+The segmented objects in the binary image are shown as white.
+The top texture is overly segmented, and the bottom texture is segmented
+almost entirely. Use <font face="courier">bwareaopen</font> to extract
+the bottom texture. 
+</p>
+
+<p>To smooth the edges and to close the open holes, use morphological
+closing operation and <font face="courier">imfill</font> function.
+</p>
+
+<li>
+<p>
+Now the original image can be segmented with the created mask
+(the most simple commands for the operation are 
+<font face="courier">im2=original_image; im2(mask)=0;</font>).
+Show the segmentation line in the original image.
+If the segmentation result is not satisfactory, you can repeat the
+operations in task 2 for the filtered image to refine the segmentation.
+</p>
+
+</ol>
+
